@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=00FF00&center=true&vCenter=true&width=600&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;Full-Stack+Developer+%7C+Open+Source+Enjoyer" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=00FF00&center=true&vCenter=true&width=600&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;vibe+dev+%7C+Jesus+lover!" alt="Typing SVG" />
 </div>
 
 <!-- Add some spacing -->
@@ -26,7 +26,7 @@
 <!-- Tech stack -->
 <h3 align="center">Tech Stack</h3>
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,docker,git&perline=7" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nodejs,python,docker,git&perline=7" />
 </div>
 
 <!-- Visitors -->
