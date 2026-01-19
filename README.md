@@ -1,4 +1,46 @@
-## Hi there 👋
+<div align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&duration=4000&pause=1000&color=00FF00&center=true&vCenter=true&width=600&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;Full-Stack+Developer+%7C+Open+Source+Enjoyer" alt="Typing SVG" />
+</div>
+
+<!-- Add some spacing -->
+<br>
+
+<!-- Stats + Languages side by side -->
+<div align="center">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Quigleybits&show_icons=true&theme=radical&hide_border=true&include_all_commits=true" />
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Quigleybits&layout=compact&langs_count=8&theme=radical&hide_border=true" />
+</div>
+
+<br>
+
+<!-- Streak + Trophy -->
+<div align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Quigleybits&theme=radical&hide_border=true" />
+</div>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=Quigleybits&theme=radical&no-frame=true&margin-w=15" />
+</div>
+
+<!-- Snake animation (needs setup) -->
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake-dark.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake.svg" />
+    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake.svg" />
+  </picture>
+</div>
+
+<!-- Tech stack -->
+<h3 align="center">Tech Stack</h3>
+<div align="center">
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,docker,git,aws&perline=7" />
+</div>
+
+<!-- Visitors -->
+<div align="center">
+  <img src="https://komarev.com/ghpvc/?username=Quigleybits&label=Profile+views&color=0e75b6&style=flat" />
+</div>
 
 <!--
 **Quigleybits/Quigleybits** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
