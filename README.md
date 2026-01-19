@@ -22,14 +22,6 @@
   <img src="https://github-profile-trophy.vercel.app/?username=Quigleybits&theme=radical&no-frame=true&margin-w=15" />
 </div>
 
-<!-- Snake animation (needs setup) -->
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake.svg" />
-    <img alt="github contribution grid snake animation" src="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-contribution-grid-snake.svg" />
-  </picture>
-</div>
 
 <!-- Tech stack -->
 <h3 align="center">Tech Stack</h3>
