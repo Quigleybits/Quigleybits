@@ -17,11 +17,11 @@
 <div align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=Quigleybits&theme=radical&hide_border=true" />
 </div>
-
+<!--
 <div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Quigleybits&theme=radical&no-frame=true&margin-w=15" />
 </div>
-
+-->
 
 <!-- Tech stack -->
 <h3 align="center">Tech Stack</h3>
