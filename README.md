@@ -8,7 +8,7 @@
 <!-- Stats + Languages side by side -->
 <div align="center">
   <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Quigleybits&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&v=1" />
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Quigleybits&layout=compact&langs_count=8&theme=radical&hide_border=true&v=2" />
+  <!-- <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Quigleybits&layout=compact&langs_count=8&theme=radical&hide_border=true&v=2" /> -->
 </div>
 
 <br>
@@ -26,7 +26,7 @@
 <!-- Tech stack -->
 <h3 align="center">Tech Stack</h3>
 <div align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,docker,git,aws&perline=7" />
+  <img src="https://skillicons.dev/icons?i=js,ts,react,nextjs,nodejs,python,docker,git&perline=7" />
 </div>
 
 <!-- Visitors -->
