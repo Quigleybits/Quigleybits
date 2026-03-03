@@ -42,7 +42,7 @@ I build full-stack web apps, AI/LLM tools, and the occasional game. Currently ex
 | Project | Description |
 |---------|-------------|
 | **Hymn_core** | SvelteKit hymn app with Firebase backend |
-| [**The Word Runner**](https://github.com/Quigleybits/the_word_runner) | 2D infinite runner game with Bible verse letters |
+| [**The Word Runner**] | 2D infinite runner game with Bible verse letters |
 | **Outline Maker** | Web tool for creating hierarchical outlines with DOCX/PDF export |
 | **Assimilax** | Hex-based mobile strategy game (React Native/Expo) |
 
