@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=00FF00&center=true&vCenter=true&width=720&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;Agentic+Infrastructure+%7C+Full-Stack+%7C+Toolsmith" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=6fa8dc&center=true&vCenter=true&width=720&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;Agent+Infrastructure+%7C+Full-Stack+%7C+Toolsmith" alt="Typing SVG" />
 </div>
 
 <br>
 
 ## About me
 
-UK-based agentic infrastructure engineer. I build the systems and tooling that make AI agents useful in real engineering work — MCP servers, role-chained pipelines, knowledge infrastructure, and a CLI standard for MCP.
+London-based agentic infrastructure engineer. I build the systems and tooling that make AI agents useful in real engineering work — MCP servers, role-chained pipelines, knowledge infrastructure, and a CLI standard for MCP.
 
 <br>
 
