@@ -1,103 +1,73 @@
-<div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=4000&pause=1000&color=6fa8dc&center=true&vCenter=true&width=720&lines=Hi+there!+I'm+Quigleybits+%F0%9F%91%8B;Agent+Infrastructure+%7C+Full-Stack+%7C+Toolsmith" alt="Typing SVG" />
-</div>
+# Aidan Quigley
+
+**Agentic infrastructure engineer & toolsmith · London**
+
+I build the systems, standards, and tooling that make AI agents reliable in real engineering work — role-chained pipelines, a CLI conformance standard for MCP (mclip.dev), and a production RAG brain I run daily. The method is the moat: spec-first, with decision logs, adversarial review gates, and documented dead-ends in the open. Not chat demos — a dozen live apps across web, mobile, and games, with the reasoning shown.
+
+> In the AI age the artifact proves less than it used to — generation is cheap. What stays scarce is judgment: the problem you chose, the options you rejected, the risk you removed, and what changed because you were involved. So this profile leads with *how* the work was done, and links to the record.
 
 <br>
 
-## About me
+## Currently
+<!-- NOW:START -->
+Building an **agentic employment hub** — local pipelines that keep my public surfaces aligned to one idea: in the AI age, the human value is the judgment behind the work, not the artifact. The same engine, generalised into a `show-your-work` tool that walks a repo's full git history and argues what its author actually decided.
 
-London-based agentic infrastructure engineer. I build the systems and tooling that make AI agents useful in real engineering work — MCP servers, role-chained pipelines, knowledge infrastructure, and a CLI standard for MCP.
+Working through:
+
+- **The harness, not the model** — permission gates, tool scoping, and run-level observability are where agent risk and quality actually live.
+- **Workflow architecture over prompting** — multi-pass pipelines (spec → build → adversarial review), with skill and `CLAUDE.md` files treated as versioned, measured artifacts.
+- **Autonomous research loops** — an agent that runs its own train → measure → keep/discard cycles on a single GPU, steered toward *inventing* model architectures rather than grid-searching hyperparameters, with a learnings ledger so it never re-tries a ruled-out idea.
+- **Agentic pipelines, not faster typing** — agents owning end-to-end handoffs (review → merge → release).
+<!-- NOW:END -->
 
 <br>
 
-## What I'm into
+## Selected work — judgment, not just artifacts
+<!-- WORK:START -->
+*Chosen for how the work was done. Each entry names the non-obvious call and links to the record.*
 
-### AI as a workflow engine, not a chatbot
-
-Orchestrating role-chained agent pipelines (planner → implementer → verifier → reviewer → critic) instead of single-prompt requests. Running parallel agent sessions with explicit file ownership and worktree isolation. Treating AI as a multi-stage workflow with scored peer review at plan and code checkpoints — not as autocomplete with vibes.
-
-Public artefacts: a published npm package of Claude Code slash commands, a handful of Claude Code plugins (text-to-speech, local Claude↔Codex bridge), and a research lab for agent-team assemblies.
-
-### Personal knowledge infrastructure
-
-A production RAG of my own design — Postgres + pgvector + Voyage-4-large (1024d) + HNSW, fronted by Supabase Edge Functions and a TypeScript MCP server, with Telegram capture, daily ingest crons, and weekly synthesis. Cloud-first by choice: no VPS and no GPU dependency in the production loop. Embed the source, not the summary.
-
-### Standards & infra contributions
-
-Currently authoring **MCLIP** — a CLI conformance profile for the Model Context Protocol — with a normative spec, a security model, 30+ conformance fixtures, and a Go reference implementation. The goal: when any MCP server is exposed through any MCLIP-conformant client, the command shape, flag conventions, JSON envelope, and exit codes are identical. Live at <https://mclip.dev>.
-
-### Pipelines & automation
-
-YouTube transcript scrapers (yt-dlp + faster-whisper + residential proxies for cron runs), X / Twitter API bookmark pipelines via OAuth2 PKCE, Firecrawl + Tavily for structured web research, and GitHub Actions for embed-pending workers, weekly synthesis, and health checks. The bias is toward small, durable, scheduled jobs over big synchronous services.
-
-### Full-stack pragmatism
-
-Comfortable shipping in Next.js 16, SvelteKit, React Native + Expo, and Phaser 3, with backends rotating between Supabase (Postgres + RLS + Realtime + Edge Functions) and Firebase (Firestore + Auth + Cloud Functions + App Check). Python for data, scraping, and tooling; Go where the standard demands it. Multiple live deployments behind custom domains.
+- **[MCLIP](https://mclip.dev) — a CLI conformance standard for MCP.** The MCP→CLI space was already crowded with non-portable wrappers, so rather than ship a ninth I standardised the *translation*: a normative spec with tagged rules, backed by 9 executable fixture servers and a Go verify harness that asserts response shape and exit codes. A spec without conformance is just prose.
+- **[2nd_brain](https://2ndbrain.website) — a production personal RAG.** Wrote an explicit trade-off hierarchy (capture-durability › always-on › simplicity …) as the tie-breaker for every design call — *"no graph DB; relational tables on the free tier are enough."* Shipped self-monitoring as discrete probes, each behind an adversarial-review pass, and captured failure modes as reusable rules instead of silently patching them.
+- **[Hymn_core](https://hymncore.net) — line-by-line hymn → scripture retrieval.** Refused to let ranking scores pick the answer: five overlapping sources feed ~300 candidates, but an LLM selects on theological merit — and I kept the weak retrievers for coverage after the data showed they supply 81% of candidates yet 0.8% of final picks. A 27-entry decision log records the measured deltas that overturned intuition (a work-stealing queue cut one job from ~8h to ~5min).
+- **[cctts](https://github.com/Quigleybits/cctts) — a Claude Code TTS plugin.** Deleted an entire storage layer once it proved unused (three rejected alternatives logged), and self-audited the shipped README against reality — logging the drift rather than hiding it.
+- **[claude-skills](https://www.npmjs.com/package/@quigleybits/claude-skills) — a published agent-skill suite.** Skill routing is *measured, not asserted*: an LLM trigger-eval harness scores each skill against TRIGGER/IGNORE cases. Built spec-first, with review gates that caught 10 design issues before any code was written.
+- **autoresearch-vision — porting an autonomous research loop to a new domain (private).** Adapted Karpathy's [`autoresearch`](https://github.com/karpathy/autoresearch) — an autonomous, single-GPU experiment loop built for *LLM* pretraining — to a different class of models and a different need: self-driving *computer-vision* research for clinical organoid / microscopy imaging. The signal is in the translation, not the fork — bits-per-byte → MAE / Dice, BPE tokeniser → image preprocessing, GPT blocks → EfficientNet + task heads — plus one deeper rethink: Karpathy treats the agent as a flat optimiser, so I made the loop *stratified*, steering it to invent architectures and mine domain literature (the part hyperparameter sweeps can't automate) over grid-searching, with a learnings ledger so dead ends aren't re-tried. The extra structure is logged in-repo as an unproven, empirically-testable bet. *Private; walkthrough on request.*
+<!-- WORK:END -->
 
 <br>
 
 ## How I work
 
 - **Spec → plan → build.** Specs and plans are first-class artefacts; no ad-hoc implementation.
-- **Verification before completion.** Pre-commit hooks gate on tests / lint / types; Playwright (Node-script-first) for UI verification.
-- **Cheapest model per task.** Haiku for enrichment, Sonnet for synthesis, Opus reserved for deep reasoning.
-- **Complexity only where it earns its keep.** Free-tier-first, serverless-first, boring tech first.
-- **Pilot then batch.** Risky changes proven on one item before applied across a set.
+- **Adversarial review before "done."** Plans and diffs go through an independent reviewer; corrections are folded back in verbatim, not waved away.
+- **Verification before completion.** Pre-commit hooks gate on tests, lint, and types; UI changes are checked in a real browser, not asserted.
+- **Cheapest model that does the job.** Haiku for enrichment, Sonnet for synthesis, Opus for deep reasoning.
+- **Complexity only where it earns its keep.** Serverless-first, free-tier-first, boring tech first.
+- **Pilot, then batch.** Risky changes are proven on one item before they touch the set.
 
 <br>
 
 ## Tech I reach for
 
-<div align="center">
-  <img src="https://skillicons.dev/icons?i=ts,js,python,go,nextjs,svelte,react,nodejs,tailwind,supabase,firebase,postgres,docker,vercel,git&perline=8" />
-</div>
-
-<table>
-  <tr>
-    <td><b>AI / LLM</b></td>
-    <td>Claude (Opus / Sonnet / Haiku), Codex CLI, MCP servers (TS + Go), Voyage embeddings, FAISS, Whisper / Voxtral</td>
-  </tr>
-  <tr>
-    <td><b>Frontend</b></td>
-    <td>Next.js 16 (App Router, Turbopack), SvelteKit, React Native + Expo, Phaser 3, Tailwind, vanilla TS + Vite</td>
-  </tr>
-  <tr>
-    <td><b>Backend</b></td>
-    <td>Supabase (Postgres, RLS, Realtime, Edge Functions), Firebase (Firestore, Auth, Cloud Functions Gen 2, App Check), Flask, Bun</td>
-  </tr>
-  <tr>
-    <td><b>Pipelines</b></td>
-    <td>yt-dlp, faster-whisper, Tavily, Firecrawl, GitHub Actions cron, residential-proxy networks</td>
-  </tr>
-  <tr>
-    <td><b>Infra</b></td>
-    <td>Vercel, Firebase Hosting, Docker, Resend (email), Playwright</td>
-  </tr>
-</table>
+| | |
+|---|---|
+| **AI / LLM** | Claude (Opus / Sonnet / Haiku), Codex CLI, MCP servers (TypeScript + Go), Voyage embeddings, FAISS, Whisper / Voxtral |
+| **Frontend** | Next.js (App Router), SvelteKit, React Native + Expo, Phaser 3, Tailwind |
+| **Backend** | Supabase (Postgres, RLS, Realtime, Edge Functions), Firebase (Firestore, Auth, Cloud Functions, App Check), Flask |
+| **Data & pipelines** | Python, pgvector, yt-dlp, faster-whisper, Tavily, Firecrawl, GitHub Actions cron |
+| **Infra** | Vercel, Firebase Hosting, Docker, Playwright |
 
 <br>
 
-## GitHub Stats
+## Activity
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=Quigleybits&show_icons=true&theme=dark&hide_border=true&include_all_commits=true&title_color=00FF00&icon_color=00FF00&text_color=FFFFFF&bg_color=0D1117" />
-  <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=Quigleybits&theme=dark&hide_border=true&ring=00FF00&fire=00FF00&currStreakLabel=00FF00&sideLabels=00FF00&background=0D1117" />
+  <img src="https://ghchart.rshah.org/Quigleybits" alt="Aidan Quigley's GitHub contribution graph" />
 </div>
 
 <br>
 
-## Contribution Graph
+---
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-snake-dark.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-snake.svg" />
-    <img alt="Snake animation" src="https://raw.githubusercontent.com/Quigleybits/Quigleybits/output/github-snake-dark.svg" />
-  </picture>
-</div>
-
-<br>
-
-<div align="center">
-  <img src="https://komarev.com/ghpvc/?username=Quigleybits&label=Profile+views&color=00FF00&style=flat" />
-</div>
+**Open to** AI / applied-AI, agent & developer-tooling, and AI-infrastructure roles.
+**Live:** [mclip.dev](https://mclip.dev) · [2ndbrain.website](https://2ndbrain.website) · [hymncore.net](https://hymncore.net)
