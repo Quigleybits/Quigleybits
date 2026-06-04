@@ -5,6 +5,8 @@
 I build the systems, standards, and tooling that make AI agents reliable in real engineering work — role-chained pipelines, a CLI conformance standard for MCP (mclip.dev), and a production RAG brain I run daily. The method is the moat: spec-first, with decision logs, adversarial review gates, and documented dead-ends in the open. Not chat demos — a dozen live apps across web, mobile, and games, with the reasoning shown.
 
 > In the AI age the artifact proves less than it used to — generation is cheap. What stays scarce is judgment: the problem you chose, the options you rejected, the risk you removed, and what changed because you were involved. So this profile leads with *how* the work was done, and links to the record.
+>
+> — Framing after **Nate B. Jones**, *AI News & Strategy Daily*.
 
 <br>
 
