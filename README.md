@@ -51,14 +51,15 @@ Working through:
 <br>
 
 ## Tech I reach for
-
+<!-- TECH:START -->
 | | |
 |---|---|
-| **AI / LLM** | Claude (Opus / Sonnet / Haiku), Codex CLI, MCP servers (TypeScript + Go), Voyage embeddings, FAISS, Whisper / Voxtral |
-| **Frontend** | Next.js (App Router), SvelteKit, React Native + Expo, Phaser 3, Tailwind |
-| **Backend** | Supabase (Postgres, RLS, Realtime, Edge Functions), Firebase (Firestore, Auth, Cloud Functions, App Check), Flask |
-| **Data & pipelines** | Python, pgvector, yt-dlp, faster-whisper, Tavily, Firecrawl, GitHub Actions cron |
-| **Infra** | Vercel, Firebase Hosting, Docker, Playwright |
+| **AI / LLM** | Claude (Fable / Opus / Sonnet / Haiku), Codex CLI, MCP servers (TypeScript + Go), Voyage + Qwen3 (local) embeddings, FAISS + BM25 hybrid retrieval, PyTorch, Whisper / Voxtral |
+| **Frontend** | Next.js (App Router), SvelteKit, Astro, React Native + Expo, Phaser 3, Tailwind + shadcn |
+| **Backend** | Supabase (Postgres, RLS, Realtime, Edge Functions), Firebase (Firestore, Auth, Cloud Functions, App Check), Neon + Drizzle, FastAPI / Flask |
+| **Data & pipelines** | Python, pgvector, D3, yt-dlp, faster-whisper, Tavily, Firecrawl, GitHub Actions cron |
+| **Infra** | Vercel, Firebase Hosting, Cloud Run, Docker, Playwright |
+<!-- TECH:END -->
 
 <br>
 
