@@ -65,4 +65,4 @@ Working through:
 ---
 
 **Open to** AI / applied-AI, agent & developer-tooling, and AI-infrastructure roles.
-**Live:** [mclip.dev](https://mclip.dev) · [2ndbrain.website](https://2ndbrain.website) · [hymncore.net](https://hymncore.net) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com) · [portfolio](https://quigley-bits.web.app)
+**Live:** [mclip.dev](https://mclip.dev) · [2ndbrain.website](https://2ndbrain.website) · [hymncore.net](https://hymncore.net) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com) · [portfolio](https://quigleybits.work)
