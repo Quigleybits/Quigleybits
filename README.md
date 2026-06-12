@@ -61,14 +61,6 @@ Working through:
 
 <br>
 
-## Activity
-
-<div align="center">
-  <img src="https://ghchart.rshah.org/Quigleybits" alt="Aidan Quigley's GitHub contribution graph" />
-</div>
-
-<br>
-
 ---
 
 **Open to** AI / applied-AI, agent & developer-tooling, and AI-infrastructure roles.
