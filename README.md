@@ -10,13 +10,14 @@ I build the systems, standards, and tooling that make AI agents reliable in real
 
 ## Currently
 <!-- NOW:START -->
-Building **agent_os** — a personal agentic operating system, run as a private research workshop: an 8-role agent team (planner, paired researchers, coder, tester, always-on critic, doc-maintainer) deployed in my daily harness; a loop runtime with ~20 specialist roles on file but only 2 resident; and a 6-level taxonomy for memory that outlives sessions. The bet underneath: **the harness is the moat, not the model** — the same model's task success can double across harnesses, so the scaffold is where the engineering lives.
+Building **agent_os** — a personal agentic operating system, run as a private research workshop: an 8-role agent team (planner, paired researchers, coder, tester, always-on critic, doc-maintainer) deployed in my daily harness; a loop runtime with ~20 specialist roles on file but only 2 resident; and a 6-level taxonomy for memory that outlives sessions. The bet underneath: **the harness is the moat, not the model** — the same model's task success can double across harnesses, so as the model layer commoditises the scaffold — and the judgment to aim it — is where the engineering lives.
 
 Working through:
 
 - **Self-evolving scaffold** — the harness should rewrite itself: run history and knowledge captures feed back into skills, agent definitions, and rules as versioned, measured artifacts.
 - **Verification is the bottleneck** — generation has outrun checking; autonomous loops compound only through a three-part ratchet (safety veto, minimum-improvement delta, re-baselining on the same evals).
 - **Agentic pipelines, not faster typing** — agents owning end-to-end handoffs (spec → build → adversarial review → merge), with human review throughput as the binding constraint.
+- **The boundary between agents is the unsolved layer** — coordinating agents that don't share a context window (handoff receipts, claim-locks, inner-loop adaptation vs outer-loop selection); the open gap is that neither an in-mission orchestrator nor an across-mission selector yet records its own mid-mission decisions as learnable evidence.
 <!-- NOW:END -->
 
 <br>
