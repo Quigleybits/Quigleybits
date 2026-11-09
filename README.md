@@ -59,4 +59,4 @@ Shipping small tools for terminal coding agents, in public, with their limits st
 
 ---
 
-**Live:** [mclip.dev](https://mclip.dev) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com) · [portfolio](https://quigleybits.work)
+**Live:** [mclip.dev](https://mclip.dev) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com)
