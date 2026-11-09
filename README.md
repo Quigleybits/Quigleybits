@@ -2,54 +2,44 @@
 
 **Agentic infrastructure engineer & toolsmith · London**
 
-I build the systems, standards, and tooling that make AI agents reliable in real engineering work — role-chained pipelines, a CLI conformance standard for MCP (mclip.dev), and a production RAG brain I run daily. The method is the moat: spec-first, with decision logs, adversarial review gates, and documented dead-ends in the open. Not chat demos — a dozen live apps across web, mobile, and games, with the reasoning shown.
+I build the systems, standards and tooling that make AI agents dependable in real engineering work: a coordination protocol for agents from different providers, a CLI conformance profile for MCP, and small extensions for terminal coding agents.
 
-> Generation is cheap now; judgment isn't. This profile leads with the problems I chose, the options I rejected, and the risk I removed — *how* the work was done — and links to the record.
+> Generation is cheap now; judgment isn't. Everything below links to something you can open and check.
 
 <br>
 
 ## Currently
 <!-- NOW:START -->
-Building **agent_os** — a personal agentic operating system, run as a private research workshop: an 8-role agent team (planner, paired researchers, coder, tester, always-on critic, doc-maintainer) deployed in my daily harness; a loop runtime with ~20 specialist roles on file but only 2 resident; and a 6-level taxonomy for memory that outlives sessions. The bet underneath: **the same model's task success can double across harnesses — the scaffold is where the engineering lives.**
+Shipping small tools for terminal coding agents, in public, with their limits stated.
 
-This month, one layer down: **Agent Co-op** — a local-first coordination protocol for terminal coding agents from *different* providers, because the unsolved boundary is between agents, not inside them. Fenced claim lanes with leases and fencing tokens, exact-question channels, structured handoffs, reviewer ≠ owner, and completion that re-hashes its own evidence receipts. ~27k lines of dependency-free Python behind 1,275 passing tests — each design put through multi-round adversarial review by a rival model *before* any code, and the round that earned its keep found a live defect in already-shipped code that 295 passing tests had missed. The first supervised run earned its keep by failing usefully: agents sat idle with actionable work in their own inboxes, waiting to be re-invoked by an orchestrator that attended mode didn't have. That idle *was* the unsolved problem, hidden while a human was driving — so the acceptance gate moved to autonomous coordination, and a human board write mid-run now *fails* it. It has since run that way end-to-end: first on itself across three providers, then on a repo that isn't its own — fixing a real bug there, zero mid-run human writes, that repo's own test gate green on the result. Status, by the project's own ladder: **tested, and exercised** — existence, not reliability. The ≥95% bar stays unclaimed, and the trial that failed is logged in the denominator.
-
-Working through:
-
-- **Self-evolving scaffold** — the harness should rewrite itself: run history and knowledge captures feed back into skills, agent definitions, and rules as versioned, measured artifacts.
-- **Verification is the bottleneck** — generation has outrun checking; autonomous loops compound only through a three-part ratchet (safety veto, minimum-improvement delta, re-baselining on the same evals), and a maturity ladder that forbids reporting a feature above its lowest failing level — specified / writable / readable / enforced / tested / exercised. "We have it" is not a status.
-- **Agentic pipelines, not faster typing** — agents owning end-to-end handoffs (spec → build → adversarial review → merge), with human review throughput as the binding constraint.
+- **[Agent Co-op](https://github.com/Quigleybits/agent-coop)** has been in public beta since 7 September, as [`agent-coop-cli` 0.1.0](https://pypi.org/project/agent-coop-cli/) on PyPI.
+- **[pi-usage-meters](https://github.com/Quigleybits/pi-usage-meters) 0.6.3** and **[pi-ram-meters](https://github.com/Quigleybits/pi-ram-meters-extension) 0.2.0** shipped on 8 November.
+- **[MCLIP](https://github.com/Quigleybits/mclip)** is pre-SEP. The core specification, 9 fixture servers and the verify harness are built. The `mclio` binary and the full conformance harness are next.
 <!-- NOW:END -->
 
 <br>
 
 ## Selected work — judgment, not just artifacts
 <!-- WORK:START -->
-*Chosen for how the work was done. Each entry names the non-obvious call and links to the record.*
+*Public work, chosen for the call behind it. Each entry links to the record.*
 
-- **[MCLIP](https://mclip.dev) — a CLI conformance standard for MCP.** The MCP→CLI space was already crowded with non-portable wrappers, so rather than ship a ninth I standardised the *translation*: a normative spec with tagged rules, backed by 9 executable fixture servers and a Go verify harness that asserts response shape and exit codes. Deliberately scoped to mechanics-not-semantics — MCP doesn't standardise tool names, so the spec refuses to promise what it can't hold — and fronted by an agent-readable door (`llms.txt` + a machine-readable profile manifest), so the standard is consumable by the agents it governs.
-- **[2nd_brain](https://2ndbrain.website) — a production personal RAG.** Wrote an explicit trade-off hierarchy (capture-durability › always-on › simplicity …) as the tie-breaker for every design call — *"no graph DB; relational tables on the free tier are enough."* Shipped self-monitoring as discrete probes, each behind an adversarial-review pass, and captured failure modes as reusable rules instead of silently patching them.
-- **[Hymn_core](https://hymncore.net) — line-by-line hymn → scripture retrieval.** Refused to let ranking scores pick the answer: five overlapping sources feed ~300 candidates, but an LLM selects on theological merit — and I kept the weak retrievers for coverage after the data showed they supply 81% of candidates yet 0.8% of final picks. A 27-entry decision log records the measured deltas that overturned intuition, and a local-embedding bake-off shipped only after passing a statistical significance gate — behind a `--retriever` flag, not a blind swap.
-- **[cctts](https://github.com/Quigleybits/cctts) — a Claude Code TTS plugin.** Deleted an entire storage layer once it proved unused (three rejected alternatives logged), and self-audited the shipped README against reality — logging the drift rather than hiding it.
-- **[claude-skills](https://www.npmjs.com/package/@quigleybits/claude-skills) — a published agent-skill suite.** Skill routing is *measured, not asserted*: an LLM trigger-eval harness scores each skill against TRIGGER/IGNORE cases, and nothing publishes until it survives a test on a real codebase that isn't its own. Built spec-first, with review gates that caught 10 design issues before any code was written.
-- **[Scosig](https://scosig.com) — a research-intelligence feed scoped to one researcher's signal (code private).** Ran a five-judge blind readability bake-off across six summariser models, then deliberately shipped the *third*-ranked one: the two winners were SLA-less free-tier endpoints, unfit for an unattended cron. The measurement decides the fact; the human decides the ship — and the operational grounds for overruling it were named in advance. Ranking constants move one variable at a time behind an eval gate (three independent blind judges, quadratic-weighted κ=0.874, before the fusion weights were promoted). When dogfooding with a second researcher exposed an ingest path that crossed tenants, the fix deleted the global code path rather than guarding the caller — making the bug class unrepresentable rather than caught. *Product live; code private.*
-- **Portfolio-wide security audit — 61 repos, one adversarially-verified pass (private).** Findings confirmed with live before/after verification rather than taken on the reviewer's word; two git-history purges executed and re-checked; a calibrated disclosure written for the one third-party codebase (stating what *wasn't* reviewed). The cross-cutting lesson — an unattended agent never holds untrusted input, secrets, *and* broad execution at once — became a standing containment rule that now gates my headless-agent fleet. *Findings ledger + writeup on request.*
-- **autoresearch-vision — porting an autonomous research loop to a new domain (private).** Adapted Karpathy's [`autoresearch`](https://github.com/karpathy/autoresearch) — an autonomous, single-GPU experiment loop built for *LLM* pretraining — to a different class of models and a different need: self-driving *computer-vision* research for clinical organoid / microscopy imaging. The signal is in the translation, not the fork — bits-per-byte → MAE / Dice, BPE tokeniser → image preprocessing, GPT blocks → EfficientNet + task heads — plus one deeper rethink: Karpathy treats the agent as a flat optimiser, so I made the loop *stratified*, steering it to invent architectures and mine domain literature (the part hyperparameter sweeps can't automate) over grid-searching, with a learnings ledger so dead ends aren't re-tried. The extra structure is logged in-repo as an unproven, empirically-testable bet. *Private; walkthrough on request.*
+- **[Agent Co-op](https://github.com/Quigleybits/agent-coop) — local-first coordination for terminal coding agents from different providers.** One agent implements and a different provider reviews. Done work is evidenced by hashed receipts, and an item closes only after independent review and the completion gate. The public docs deliberately quote no reliability rate, because *"a rate without its denominator is marketing, not evidence."* They tell you to run the suite and a real item on your own repo. MIT, no runtime dependencies.
+- **[MCLIP](https://mclip.dev) — a CLI conformance profile for MCP.** The MCP-to-CLI space already had many wrappers, each with its own flags and output, so I standardised the translation instead of adding another: any MCP server gets the same command shape, JSON envelope and exit codes. [The repo](https://github.com/Quigleybits/mclip) holds the specification, 9 synthetic fixture servers and a Go verify harness.
+- **[pi-usage-meters](https://github.com/Quigleybits/pi-usage-meters) — one `/usage` view of subscription quota.** It covers Claude, Codex, Copilot, Kimi, Grok, GLM and MiniMax plans. The entry renders in the transcript and never enters the model's context. Install it from [npm](https://www.npmjs.com/package/pi-usage-meters).
+- **[pi-ram-meters](https://github.com/Quigleybits/pi-ram-meters-extension) — a Windows RAM dashboard and process picker for pi.** `/ram` shows what is using memory and lets you choose what to close. Names and descriptions are guidance only: labels do not authorize closure, and unknown work stays marked as caution.
+- **[cctts](https://github.com/Quigleybits/cctts) — a Claude Code plugin that speaks assistant output aloud.** Voice, rate and volume can be set per terminal, per project or globally. The README says up front that spoken text goes to Microsoft's Edge TTS endpoint, and that macOS and Linux are unvalidated.
+- **[claude-skills](https://www.npmjs.com/package/@quigleybits/claude-skills) — published Claude Code skills.** `/recon` surveys a project and `/debrief` closes a session. Each ships with an eval set of queries that should and should not trigger it. The installer never deletes or overwrites an existing skill directory.
+- **[Scosig](https://scosig.com) — a customisable research-intelligence dashboard, scoped to each researcher's signal.** *Live product; code private.*
 <!-- WORK:END -->
 
 <br>
 
 ## How I work
 <!-- HOW:START -->
-*Distilled from `agent_os` — my private research workshop on agent teams, loops, and memory — and refreshed as the system evolves. Walkthrough on request.*
-
-- **An agent team, not a chat window.** Eight roles — orchestrator, planner, paired researchers, coder, tester, always-on critic, doc-maintainer — run in my daily harness. "Done" is gated by the tester and challenged by the critic, never declared by the maker.
-- **Catalog ≠ payroll.** ~20 specialist roles on file, 2 resident; specialists spawn fresh per job on the cheapest model that clears the bar, write their output to disk, and die. Cost scales with work, not headcount.
-- **Maker / verifier split.** The agent that builds never judges its own work — verification runs in a separate context, often on a different model.
-- **Ratchets before autonomy.** Self-improving loops pass a three-part gate — safety veto, minimum-improvement delta, re-baselining on the same eval subset — so compounding only points upward.
-- **Artifacts, not prose.** Handoffs are file paths and traces, never summaries; a summary without its source is context pollution.
-- **Evals before automation.** Skill routing is measured against trigger/ignore cases before anything runs unattended; skill files are trainable parameters, versioned and scored.
-- **A constitution agents can't edit.** Principles, kill conditions, and decision logs are human-owned; loops read them, propose changes, and never write them.
+- **The maker never judges its own work.** Review runs in a separate context, often with a different provider.
+- **Evidence, not assertion.** "Done" needs something you can re-check: a hash, a test run or a live link.
+- **Evals before automation.** Skill routing is tested against should-trigger and should-ignore queries before it runs unattended.
+- **State the limits.** The READMEs say what is unsupported or not yet built.
 <!-- HOW:END -->
 
 <br>
@@ -69,5 +59,4 @@ Working through:
 
 ---
 
-**Open to** AI / applied-AI, agent & developer-tooling, and AI-infrastructure roles.
-**Live:** [mclip.dev](https://mclip.dev) · [2ndbrain.website](https://2ndbrain.website) · [hymncore.net](https://hymncore.net) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com) · [portfolio](https://quigleybits.work)
+**Live:** [mclip.dev](https://mclip.dev) · [kanban.website](https://kanban.website) · [scosig.com](https://scosig.com) · [portfolio](https://quigleybits.work)
